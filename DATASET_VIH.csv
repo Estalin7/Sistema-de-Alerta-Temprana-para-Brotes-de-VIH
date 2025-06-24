@@ -1,0 +1,501 @@
+Anio,Departamento,Sexo,CasosEstimados,Tendencia
+2015,Amazonas,Masculino,125,Igual
+2015,Amazonas,Femenino,83,Igual
+2015,Ancash,Masculino,150,Igual
+2015,Ancash,Femenino,100,Igual
+2015,Apurimac,Masculino,60,Igual
+2015,Apurimac,Femenino,40,Igual
+2015,Arequipa,Masculino,300,Igual
+2015,Arequipa,Femenino,200,Igual
+2015,Ayacucho,Masculino,75,Igual
+2015,Ayacucho,Femenino,50,Igual
+2015,Cajamarca,Masculino,90,Igual
+2015,Cajamarca,Femenino,60,Igual
+2015,Callao,Masculino,450,Igual
+2015,Callao,Femenino,300,Igual
+2015,Cusco,Masculino,120,Igual
+2015,Cusco,Femenino,80,Igual
+2015,Huancavelica,Masculino,45,Igual
+2015,Huancavelica,Femenino,30,Igual
+2015,Huanuco,Masculino,105,Igual
+2015,Huanuco,Femenino,70,Igual
+2015,Ica,Masculino,270,Igual
+2015,Ica,Femenino,180,Igual
+2015,Junin,Masculino,180,Igual
+2015,Junin,Femenino,120,Igual
+2015,La Libertad,Masculino,330,Igual
+2015,La Libertad,Femenino,220,Igual
+2015,Lambayeque,Masculino,210,Igual
+2015,Lambayeque,Femenino,140,Igual
+2015,Lima,Masculino,3600,Igual
+2015,Lima,Femenino,2400,Igual
+2015,Loreto,Masculino,540,Igual
+2015,Loreto,Femenino,360,Igual
+2015,Madre de Dios,Masculino,90,Igual
+2015,Madre de Dios,Femenino,60,Igual
+2015,Moquegua,Masculino,60,Igual
+2015,Moquegua,Femenino,40,Igual
+2015,Pasco,Masculino,45,Igual
+2015,Pasco,Femenino,30,Igual
+2015,Piura,Masculino,150,Igual
+2015,Piura,Femenino,100,Igual
+2015,Puno,Masculino,90,Igual
+2015,Puno,Femenino,60,Igual
+2015,San Martin,Masculino,120,Igual
+2015,San Martin,Femenino,80,Igual
+2015,Tacna,Masculino,75,Igual
+2015,Tacna,Femenino,50,Igual
+2015,Tumbes,Masculino,60,Igual
+2015,Tumbes,Femenino,40,Igual
+2015,Ucayali,Masculino,180,Igual
+2015,Ucayali,Femenino,120,Igual
+2016,Amazonas,Masculino,130,Incremento
+2016,Amazonas,Femenino,33,Decremento
+2016,Ancash,Masculino,160,Incremento
+2016,Ancash,Femenino,40,Decremento
+2016,Apurimac,Masculino,65,Incremento
+2016,Apurimac,Femenino,16,Decremento
+2016,Arequipa,Masculino,310,Incremento
+2016,Arequipa,Femenino,78,Decremento
+2016,Ayacucho,Masculino,80,Incremento
+2016,Ayacucho,Femenino,20,Decremento
+2016,Cajamarca,Masculino,95,Incremento
+2016,Cajamarca,Femenino,24,Decremento
+2016,Callao,Masculino,470,Incremento
+2016,Callao,Femenino,118,Decremento
+2016,Cusco,Masculino,125,Incremento
+2016,Cusco,Femenino,31,Decremento
+2016,Huancavelica,Masculino,50,Incremento
+2016,Huancavelica,Femenino,13,Decremento
+2016,Huanuco,Masculino,110,Incremento
+2016,Huanuco,Femenino,28,Decremento
+2016,Ica,Masculino,280,Incremento
+2016,Ica,Femenino,70,Decremento
+2016,Junin,Masculino,190,Incremento
+2016,Junin,Femenino,48,Decremento
+2016,La Libertad,Masculino,340,Incremento
+2016,La Libertad,Femenino,85,Decremento
+2016,Lambayeque,Masculino,220,Incremento
+2016,Lambayeque,Femenino,55,Decremento
+2016,Lima,Masculino,3800,Incremento
+2016,Lima,Femenino,950,Decremento
+2016,Loreto,Masculino,560,Incremento
+2016,Loreto,Femenino,140,Decremento
+2016,Madre de Dios,Masculino,95,Incremento
+2016,Madre de Dios,Femenino,24,Decremento
+2016,Moquegua,Masculino,65,Incremento
+2016,Moquegua,Femenino,16,Decremento
+2016,Pasco,Masculino,50,Incremento
+2016,Pasco,Femenino,13,Decremento
+2016,Piura,Masculino,160,Incremento
+2016,Piura,Femenino,40,Decremento
+2016,Puno,Masculino,95,Incremento
+2016,Puno,Femenino,24,Decremento
+2016,San Martin,Masculino,125,Incremento
+2016,San Martin,Femenino,31,Decremento
+2016,Tacna,Masculino,80,Incremento
+2016,Tacna,Femenino,20,Decremento
+2016,Tumbes,Masculino,65,Incremento
+2016,Tumbes,Femenino,16,Decremento
+2016,Ucayali,Masculino,190,Incremento
+2016,Ucayali,Femenino,48,Decremento
+2017,Amazonas,Masculino,130,Igual
+2017,Amazonas,Femenino,35,Incremento
+2017,Ancash,Masculino,160,Igual
+2017,Ancash,Femenino,42,Incremento
+2017,Apurimac,Masculino,65,Igual
+2017,Apurimac,Femenino,17,Incremento
+2017,Arequipa,Masculino,310,Igual
+2017,Arequipa,Femenino,82,Incremento
+2017,Ayacucho,Masculino,80,Igual
+2017,Ayacucho,Femenino,21,Incremento
+2017,Cajamarca,Masculino,95,Igual
+2017,Cajamarca,Femenino,25,Incremento
+2017,Callao,Masculino,470,Igual
+2017,Callao,Femenino,125,Incremento
+2017,Cusco,Masculino,125,Igual
+2017,Cusco,Femenino,33,Incremento
+2017,Huancavelica,Masculino,50,Igual
+2017,Huancavelica,Femenino,13,Incremento
+2017,Huanuco,Masculino,110,Igual
+2017,Huanuco,Femenino,29,Incremento
+2017,Ica,Masculino,280,Igual
+2017,Ica,Femenino,74,Incremento
+2017,Junin,Masculino,190,Igual
+2017,Junin,Femenino,50,Incremento
+2017,La Libertad,Masculino,340,Igual
+2017,La Libertad,Femenino,89,Incremento
+2017,Lambayeque,Masculino,220,Igual
+2017,Lambayeque,Femenino,58,Incremento
+2017,Lima,Masculino,3800,Igual
+2017,Lima,Femenino,1000,Incremento
+2017,Loreto,Masculino,560,Igual
+2017,Loreto,Femenino,147,Incremento
+2017,Madre de Dios,Masculino,95,Igual
+2017,Madre de Dios,Femenino,25,Incremento
+2017,Moquegua,Masculino,65,Igual
+2017,Moquegua,Femenino,17,Incremento
+2017,Pasco,Masculino,50,Igual
+2017,Pasco,Femenino,13,Incremento
+2017,Piura,Masculino,160,Igual
+2017,Piura,Femenino,42,Incremento
+2017,Puno,Masculino,95,Igual
+2017,Puno,Femenino,25,Incremento
+2017,San Martin,Masculino,125,Igual
+2017,San Martin,Femenino,33,Incremento
+2017,Tacna,Masculino,80,Igual
+2017,Tacna,Femenino,21,Incremento
+2017,Tumbes,Masculino,65,Igual
+2017,Tumbes,Femenino,17,Incremento
+2017,Ucayali,Masculino,190,Igual
+2017,Ucayali,Femenino,50,Incremento
+2018,Amazonas,Masculino,144,incremento
+2018,Amazonas,Femenino,54,Incremento
+2018,Ancash,Masculino,160,Igual
+2018,Ancash,Femenino,67,Incremento
+2018,Apurimac,Masculino,65,Igual
+2018,Apurimac,Femenino,27,Incremento
+2018,Arequipa,Masculino,310,Igual
+2018,Arequipa,Femenino,129,Incremento
+2018,Ayacucho,Masculino,80,Igual
+2018,Ayacucho,Femenino,33,Incremento
+2018,Cajamarca,Masculino,95,Igual
+2018,Cajamarca,Femenino,40,Incremento
+2018,Callao,Masculino,470,Igual
+2018,Callao,Femenino,196,Incremento
+2018,Cusco,Masculino,125,Igual
+2018,Cusco,Femenino,52,Incremento
+2018,Huancavelica,Masculino,50,Igual
+2018,Huancavelica,Femenino,21,Incremento
+2018,Huanuco,Masculino,110,Igual
+2018,Huanuco,Femenino,46,Incremento
+2018,Ica,Masculino,280,Igual
+2018,Ica,Femenino,117,Incremento
+2018,Junin,Masculino,190,Igual
+2018,Junin,Femenino,79,Incremento
+2018,La Libertad,Masculino,340,Igual
+2018,La Libertad,Femenino,142,Incremento
+2018,Lambayeque,Masculino,220,Igual
+2018,Lambayeque,Femenino,92,Incremento
+2018,Lima,Masculino,3800,Igual
+2018,Lima,Femenino,1000,Incremento
+2018,Loreto,Masculino,560,Igual
+2018,Loreto,Femenino,235,Incremento
+2018,Madre de Dios,Masculino,95,Igual
+2018,Madre de Dios,Femenino,40,Incremento
+2018,Moquegua,Masculino,65,Igual
+2018,Moquegua,Femenino,27,Incremento
+2018,Pasco,Masculino,50,Igual
+2018,Pasco,Femenino,21,Incremento
+2018,Piura,Masculino,160,Igual
+2018,Piura,Femenino,67,Incremento
+2018,Puno,Masculino,95,Igual
+2018,Puno,Femenino,40,Incremento
+2018,San Martin,Masculino,125,Igual
+2018,San Martin,Femenino,52,Incremento
+2018,Tacna,Masculino,80,Igual
+2018,Tacna,Femenino,33,Incremento
+2018,Tumbes,Masculino,65,Igual
+2018,Tumbes,Femenino,27,Incremento
+2018,Ucayali,Masculino,190,Igual
+2018,Ucayali,Femenino,80,Incremento
+2019,Amazonas,Masculino,131,Decremento
+2019,Amazonas,Femenino,30,Incremento
+2019,Ancash,Masculino,150,Decremento
+2019,Ancash,Femenino,40,Decremento
+2019,Apurimac,Masculino,60,Decremento
+2019,Apurimac,Femenino,15,Decremento
+2019,Arequipa,Masculino,300,Decremento
+2019,Arequipa,Femenino,70,Decremento
+2019,Ayacucho,Masculino,75,Decremento
+2019,Ayacucho,Femenino,20,Decremento
+2019,Cajamarca,Masculino,90,Decremento
+2019,Cajamarca,Femenino,20,Decremento
+2019,Callao,Masculino,450,Decremento
+2019,Callao,Femenino,100,Decremento
+2019,Cusco,Masculino,120,Decremento
+2019,Cusco,Femenino,30,Decremento
+2019,Huancavelica,Masculino,50,Igual
+2019,Huancavelica,Femenino,12,Decremento
+2019,Huanuco,Masculino,110,Igual
+2019,Huanuco,Femenino,25,Decremento
+2019,Ica,Masculino,280,Igual
+2019,Ica,Femenino,70,Decremento
+2019,Junin,Masculino,180,Decremento
+2019,Junin,Femenino,45,Decremento
+2019,La Libertad,Masculino,340,Igual
+2019,La Libertad,Femenino,85,Decremento
+2019,Lambayeque,Masculino,220,Igual
+2019,Lambayeque,Femenino,55,Decremento
+2019,Lima,Masculino,3400,Decremento
+2019,Lima,Femenino,950,Decremento
+2019,Loreto,Masculino,550,Decremento
+2019,Loreto,Femenino,130,Decremento
+2019,Madre de Dios,Masculino,95,Decremento
+2019,Madre de Dios,Femenino,22,Decremento
+2019,Moquegua,Masculino,60,Decremento
+2019,Moquegua,Femenino,15,Decremento
+2019,Pasco,Masculino,50,Decremento
+2019,Pasco,Femenino,13,Decremento
+2019,Piura,Masculino,160,Decremento
+2019,Piura,Femenino,40,Decremento
+2019,Puno,Masculino,90,Decremento
+2019,Puno,Femenino,20,Decremento
+2019,San Martin,Masculino,120,Decremento
+2019,San Martin,Femenino,30,Decremento
+2019,Tacna,Masculino,75,Decremento
+2019,Tacna,Femenino,18,Decremento
+2019,Tumbes,Masculino,60,Decremento
+2019,Tumbes,Femenino,15,Decremento
+2019,Ucayali,Masculino,180,Decremento
+2019,Ucayali,Femenino,45,Decremento
+2020,Amazonas,Masculino,120,Decremento
+2020,Amazonas,Femenino,30,Igual
+2020,Ancash,Masculino,150,Igual
+2020,Ancash,Femenino,40,Igual
+2020,Apurimac,Masculino,65,Incremento
+2020,Apurimac,Femenino,17,Incremento
+2020,Arequipa,Masculino,300,Igual
+2020,Arequipa,Femenino,75,Incremento
+2020,Ayacucho,Masculino,70,Decremento
+2020,Ayacucho,Femenino,18,Decremento
+2020,Cajamarca,Masculino,85,Decremento
+2020,Cajamarca,Femenino,22,Incremento
+2020,Callao,Masculino,450,Igual
+2020,Callao,Femenino,110,Incremento
+2020,Cusco,Masculino,120,Igual
+2020,Cusco,Femenino,30,Igual
+2020,Huancavelica,Masculino,50,Igual
+2020,Huancavelica,Femenino,12,Igual
+2020,Huanuco,Masculino,100,Decremento
+2020,Huanuco,Femenino,25,Igual
+2020,Ica,Masculino,250,Decremento
+2020,Ica,Femenino,60,Decremento
+2020,Junin,Masculino,175,Decremento
+2020,Junin,Femenino,45,Igual
+2020,La Libertad,Masculino,325,Decremento
+2020,La Libertad,Femenino,80,Decremento
+2020,Lambayeque,Masculino,210,Decremento
+2020,Lambayeque,Femenino,55,Igual
+2020,Lima,Masculino,3800,Incremento
+2020,Lima,Femenino,950,Igual
+2020,Loreto,Masculino,500,Decremento
+2020,Loreto,Femenino,120,Decremento
+2020,Madre de Dios,Masculino,95,Igual
+2020,Madre de Dios,Femenino,23,Incremento
+2020,Moquegua,Masculino,65,Incremento
+2020,Moquegua,Femenino,16,Incremento
+2020,Pasco,Masculino,50,Igual
+2020,Pasco,Femenino,12,Decremento
+2020,Piura,Masculino,160,Igual
+2020,Piura,Femenino,40,Igual
+2020,Puno,Masculino,90,Igual
+2020,Puno,Femenino,22,Incremento
+2020,San Martin,Masculino,120,Igual
+2020,San Martin,Femenino,30,Igual
+2020,Tacna,Masculino,75,Igual
+2020,Tacna,Femenino,18,Igual
+2020,Tumbes,Masculino,60,Igual
+2020,Tumbes,Femenino,15,Igual
+2020,Ucayali,Masculino,180,Igual
+2020,Ucayali,Femenino,45,Igual
+2021,Amazonas,Masculino,140,Incremento
+2021,Amazonas,Femenino,35,Incremento
+2021,Ancash,Masculino,170,Incremento
+2021,Ancash,Femenino,43,Incremento
+2021,Apurimac,Masculino,70,Incremento
+2021,Apurimac,Femenino,18,Incremento
+2021,Arequipa,Masculino,330,Incremento
+2021,Arequipa,Femenino,83,Incremento
+2021,Ayacucho,Masculino,85,Incremento
+2021,Ayacucho,Femenino,21,Incremento
+2021,Cajamarca,Masculino,100,Incremento
+2021,Cajamarca,Femenino,25,Incremento
+2021,Callao,Masculino,500,Incremento
+2021,Callao,Femenino,125,Incremento
+2021,Cusco,Masculino,130,Incremento
+2021,Cusco,Femenino,33,Incremento
+2021,Huancavelica,Masculino,55,Incremento
+2021,Huancavelica,Femenino,14,Incremento
+2021,Huanuco,Masculino,120,Incremento
+2021,Huanuco,Femenino,30,Incremento
+2021,Ica,Masculino,300,Incremento
+2021,Ica,Femenino,75,Incremento
+2021,Junin,Masculino,200,Incremento
+2021,Junin,Femenino,50,Incremento
+2021,La Libertad,Masculino,360,Incremento
+2021,La Libertad,Femenino,90,Incremento
+2021,Lambayeque,Masculino,230,Incremento
+2021,Lambayeque,Femenino,58,Incremento
+2021,Lima,Masculino,400,Decremento
+2021,Lima,Femenino,100,Decremento
+2021,Loreto,Masculino,580,Incremento
+2021,Loreto,Femenino,145,Incremento
+2021,Madre de Dios,Masculino,100,Incremento
+2021,Madre de Dios,Femenino,25,Incremento
+2021,Moquegua,Masculino,70,Incremento
+2021,Moquegua,Femenino,18,Incremento
+2021,Pasco,Masculino,55,Incremento
+2021,Pasco,Femenino,14,Incremento
+2021,Piura,Masculino,170,Incremento
+2021,Piura,Femenino,43,Incremento
+2021,Puno,Masculino,100,Incremento
+2021,Puno,Femenino,25,Incremento
+2021,San Martin,Masculino,130,Incremento
+2021,San Martin,Femenino,33,Incremento
+2021,Tacna,Masculino,85,Incremento
+2021,Tacna,Femenino,21,Incremento
+2021,Tumbes,Masculino,70,Incremento
+2021,Tumbes,Femenino,18,Incremento
+2021,Ucayali,Masculino,200,Incremento
+2021,Ucayali,Femenino,50,Incremento
+2022,Amazonas,Masculino,130,Decremento
+2022,Amazonas,Femenino,32,Decremento
+2022,Ancash,Masculino,160,Decremento
+2022,Ancash,Femenino,42,Decremento
+2022,Apurimac,Masculino,68,Decremento
+2022,Apurimac,Femenino,17,Decremento
+2022,Arequipa,Masculino,310,Decremento
+2022,Arequipa,Femenino,78,Decremento
+2022,Ayacucho,Masculino,72,Decremento
+2022,Ayacucho,Femenino,19,Decremento
+2022,Cajamarca,Masculino,90,Decremento
+2022,Cajamarca,Femenino,23,Decremento
+2022,Callao,Masculino,475,Decremento
+2022,Callao,Femenino,115,Decremento
+2022,Cusco,Masculino,125,Decremento
+2022,Cusco,Femenino,32,Decremento
+2022,Huancavelica,Masculino,52,Decremento
+2022,Huancavelica,Femenino,13,Decremento
+2022,Huanuco,Masculino,95,Decremento
+2022,Huanuco,Femenino,24,Decremento
+2022,Ica,Masculino,260,Decremento
+2022,Ica,Femenino,64,Decremento
+2022,Junin,Masculino,180,Decremento
+2022,Junin,Femenino,46,Decremento
+2022,La Libertad,Masculino,315,Decremento
+2022,La Libertad,Femenino,75,Decremento
+2022,Lambayeque,Masculino,205,Decremento
+2022,Lambayeque,Femenino,53,Decremento
+2022,Lima,Masculino,390,Decremento
+2022,Lima,Femenino,950,Incremento
+2022,Loreto,Masculino,510,Decremento
+2022,Loreto,Femenino,125,Decremento
+2022,Madre de Dios,Masculino,90,Decremento
+2022,Madre de Dios,Femenino,22,Decremento
+2022,Moquegua,Masculino,60,Decremento
+2022,Moquegua,Femenino,15,Decremento
+2022,Pasco,Masculino,48,Decremento
+2022,Pasco,Femenino,12,Decremento
+2022,Piura,Masculino,155,Decremento
+2022,Piura,Femenino,39,Decremento
+2022,Puno,Masculino,85,Decremento
+2022,Puno,Femenino,21,Decremento
+2022,San Martin,Masculino,120,Decremento
+2022,San Martin,Femenino,30,Decremento
+2022,Tacna,Masculino,70,Decremento
+2022,Tacna,Femenino,18,Decremento
+2022,Tumbes,Masculino,58,Decremento
+2022,Tumbes,Femenino,15,Decremento
+2022,Ucayali,Masculino,175,Decremento
+2022,Ucayali,Femenino,43,Decremento
+2023,Amazonas,Masculino,150,Incremento
+2023,Amazonas,Femenino,38,Incremento
+2023,Ancash,Masculino,180,Incremento
+2023,Ancash,Femenino,45,Incremento
+2023,Apurimac,Masculino,75,Incremento
+2023,Apurimac,Femenino,19,Incremento
+2023,Arequipa,Masculino,350,Incremento
+2023,Arequipa,Femenino,90,Incremento
+2023,Ayacucho,Masculino,90,Incremento
+2023,Ayacucho,Femenino,23,Incremento
+2023,Cajamarca,Masculino,110,Incremento
+2023,Cajamarca,Femenino,27,Incremento
+2023,Callao,Masculino,550,Incremento
+2023,Callao,Femenino,140,Incremento
+2023,Cusco,Masculino,140,Incremento
+2023,Cusco,Femenino,35,Incremento
+2023,Huancavelica,Masculino,55,Incremento
+2023,Huancavelica,Femenino,13,Incremento
+2023,Huanuco,Masculino,110,Incremento
+2023,Huanuco,Femenino,28,Incremento
+2023,Ica,Masculino,320,Incremento
+2023,Ica,Femenino,80,Incremento
+2023,Junin,Masculino,210,Incremento
+2023,Junin,Femenino,55,Incremento
+2023,La Libertad,Masculino,380,Incremento
+2023,La Libertad,Femenino,95,Incremento
+2023,Lambayeque,Masculino,240,Incremento
+2023,Lambayeque,Femenino,60,Incremento
+2023,Lima,Masculino,420,Incremento
+2023,Lima,Femenino,105,Incremento
+2023,Loreto,Masculino,600,Incremento
+2023,Loreto,Femenino,150,Incremento
+2023,Madre de Dios,Masculino,105,Incremento
+2023,Madre de Dios,Femenino,26,Incremento
+2023,Moquegua,Masculino,75,Incremento
+2023,Moquegua,Femenino,18,Incremento
+2023,Pasco,Masculino,60,Incremento
+2023,Pasco,Femenino,15,Incremento
+2023,Piura,Masculino,180,Incremento
+2023,Piura,Femenino,45,Incremento
+2023,Puno,Masculino,110,Incremento
+2023,Puno,Femenino,27,Incremento
+2023,San Martin,Masculino,140,Incremento
+2023,San Martin,Femenino,35,Incremento
+2023,Tacna,Masculino,95,Incremento
+2023,Tacna,Femenino,23,Incremento
+2023,Tumbes,Masculino,75,Incremento
+2023,Tumbes,Femenino,19,Incremento
+2023,Ucayali,Masculino,220,Incremento
+2023,Ucayali,Femenino,55,Incremento
+2024,Amazonas,Masculino,140,Incremento
+2024,Amazonas,Femenino,35,Incremento
+2024,Ancash,Masculino,170,Incremento
+2024,Ancash,Femenino,43,Incremento
+2024,Apurimac,Masculino,70,Incremento
+2024,Apurimac,Femenino,18,Incremento
+2024,Arequipa,Masculino,330,Incremento
+2024,Arequipa,Femenino,83,Incremento
+2024,Ayacucho,Masculino,85,Incremento
+2024,Ayacucho,Femenino,21,Incremento
+2024,Cajamarca,Masculino,100,Incremento
+2024,Cajamarca,Femenino,25,Incremento
+2024,Callao,Masculino,500,Incremento
+2024,Callao,Femenino,125,Incremento
+2024,Cusco,Masculino,130,Incremento
+2024,Cusco,Femenino,33,Incremento
+2024,Huancavelica,Masculino,55,Incremento
+2024,Huancavelica,Femenino,14,Incremento
+2024,Huanuco,Masculino,120,Incremento
+2024,Huanuco,Femenino,30,Incremento
+2024,Ica,Masculino,300,Incremento
+2024,Ica,Femenino,75,Incremento
+2024,Junin,Masculino,200,Incremento
+2024,Junin,Femenino,50,Incremento
+2024,La Libertad,Masculino,360,Incremento
+2024,La Libertad,Femenino,90,Incremento
+2024,Lambayeque,Masculino,230,Incremento
+2024,Lambayeque,Femenino,58,Incremento
+2024,Lima,Masculino,4,Incremento
+2024,Lima,Femenino,1,Incremento
+2024,Loreto,Masculino,580,Incremento
+2024,Loreto,Femenino,145,Incremento
+2024,Madre de Dios,Masculino,100,Incremento
+2024,Madre de Dios,Femenino,25,Incremento
+2024,Moquegua,Masculino,70,Incremento
+2024,Moquegua,Femenino,18,Incremento
+2024,Pasco,Masculino,55,Incremento
+2024,Pasco,Femenino,14,Incremento
+2024,Piura,Masculino,170,Incremento
+2024,Piura,Femenino,43,Incremento
+2024,Puno,Masculino,100,Incremento
+2024,Puno,Femenino,25,Incremento
+2024,San Martin,Masculino,130,Incremento
+2024,San Martin,Femenino,33,Incremento
+2024,Tacna,Masculino,85,Incremento
+2024,Tacna,Femenino,21,Incremento
+2024,Tumbes,Masculino,70,Incremento
+2024,Tumbes,Femenino,18,Incremento
+2024,Ucayali,Masculino,200,Incremento
+2024,Ucayali,Femenino,50,Incremento
