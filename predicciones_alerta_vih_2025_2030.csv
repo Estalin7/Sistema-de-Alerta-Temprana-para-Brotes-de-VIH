@@ -1,0 +1,301 @@
+Anio,Departamento,Sexo,CasosEstimados_Predichos,PromHist,Alerta
+2025,Amazonas,Masculino,129,134.0,False
+2025,Amazonas,Femenino,29,40.5,False
+2025,Ancash,Masculino,167,161.0,False
+2025,Ancash,Femenino,42,50.2,False
+2025,Apurimac,Masculino,71,66.3,False
+2025,Apurimac,Femenino,18,20.4,False
+2025,Arequipa,Masculino,321,315.0,False
+2025,Arequipa,Femenino,81,96.8,False
+2025,Ayacucho,Masculino,77,79.2,False
+2025,Ayacucho,Femenino,19,24.6,False
+2025,Cajamarca,Masculino,95,95.0,False
+2025,Cajamarca,Femenino,26,29.1,False
+2025,Callao,Masculino,499,478.5,False
+2025,Callao,Femenino,125,145.4,False
+2025,Cusco,Masculino,128,126.0,False
+2025,Cusco,Femenino,32,38.9,False
+2025,Huancavelica,Masculino,54,51.2,False
+2025,Huancavelica,Femenino,13,15.5,False
+2025,Huanuco,Masculino,105,109.0,False
+2025,Huanuco,Femenino,26,33.5,False
+2025,Ica,Masculino,272,282.0,False
+2025,Ica,Femenino,67,86.5,False
+2025,Junin,Masculino,186,189.5,False
+2025,Junin,Femenino,47,58.8,False
+2025,La Libertad,Masculino,352,343.0,False
+2025,La Libertad,Femenino,80,105.1,False
+2025,Lambayeque,Masculino,217,220.5,False
+2025,Lambayeque,Femenino,60,68.4,False
+2025,Lima,Masculino,288,2341.4,False
+2025,Lima,Femenino,159,840.6,False
+2025,Loreto,Masculino,546,554.0,False
+2025,Loreto,Femenino,130,169.7,False
+2025,Madre de Dios,Masculino,96,96.0,False
+2025,Madre de Dios,Femenino,24,29.2,False
+2025,Moquegua,Masculino,69,65.5,False
+2025,Moquegua,Femenino,16,20.0,False
+2025,Pasco,Masculino,52,51.3,False
+2025,Pasco,Femenino,13,15.7,False
+2025,Piura,Masculino,168,162.5,False
+2025,Piura,Femenino,40,49.9,False
+2025,Puno,Masculino,92,95.0,False
+2025,Puno,Femenino,25,28.9,False
+2025,San Martin,Masculino,127,125.5,False
+2025,San Martin,Femenino,31,38.7,False
+2025,Tacna,Masculino,88,80.0,False
+2025,Tacna,Femenino,19,24.3,False
+2025,Tumbes,Masculino,65,64.8,False
+2025,Tumbes,Femenino,17,20.0,False
+2025,Ucayali,Masculino,188,190.5,False
+2025,Ucayali,Femenino,45,58.6,False
+2026,Amazonas,Masculino,129,134.0,False
+2026,Amazonas,Femenino,29,40.5,False
+2026,Ancash,Masculino,167,161.0,False
+2026,Ancash,Femenino,42,50.2,False
+2026,Apurimac,Masculino,71,66.3,False
+2026,Apurimac,Femenino,18,20.4,False
+2026,Arequipa,Masculino,321,315.0,False
+2026,Arequipa,Femenino,81,96.8,False
+2026,Ayacucho,Masculino,77,79.2,False
+2026,Ayacucho,Femenino,19,24.6,False
+2026,Cajamarca,Masculino,95,95.0,False
+2026,Cajamarca,Femenino,26,29.1,False
+2026,Callao,Masculino,499,478.5,False
+2026,Callao,Femenino,125,145.4,False
+2026,Cusco,Masculino,128,126.0,False
+2026,Cusco,Femenino,32,38.9,False
+2026,Huancavelica,Masculino,54,51.2,False
+2026,Huancavelica,Femenino,13,15.5,False
+2026,Huanuco,Masculino,105,109.0,False
+2026,Huanuco,Femenino,26,33.5,False
+2026,Ica,Masculino,272,282.0,False
+2026,Ica,Femenino,67,86.5,False
+2026,Junin,Masculino,186,189.5,False
+2026,Junin,Femenino,47,58.8,False
+2026,La Libertad,Masculino,352,343.0,False
+2026,La Libertad,Femenino,80,105.1,False
+2026,Lambayeque,Masculino,217,220.5,False
+2026,Lambayeque,Femenino,60,68.4,False
+2026,Lima,Masculino,288,2341.4,False
+2026,Lima,Femenino,159,840.6,False
+2026,Loreto,Masculino,546,554.0,False
+2026,Loreto,Femenino,130,169.7,False
+2026,Madre de Dios,Masculino,96,96.0,False
+2026,Madre de Dios,Femenino,24,29.2,False
+2026,Moquegua,Masculino,69,65.5,False
+2026,Moquegua,Femenino,16,20.0,False
+2026,Pasco,Masculino,52,51.3,False
+2026,Pasco,Femenino,13,15.7,False
+2026,Piura,Masculino,168,162.5,False
+2026,Piura,Femenino,40,49.9,False
+2026,Puno,Masculino,92,95.0,False
+2026,Puno,Femenino,25,28.9,False
+2026,San Martin,Masculino,127,125.5,False
+2026,San Martin,Femenino,31,38.7,False
+2026,Tacna,Masculino,88,80.0,False
+2026,Tacna,Femenino,19,24.3,False
+2026,Tumbes,Masculino,65,64.8,False
+2026,Tumbes,Femenino,17,20.0,False
+2026,Ucayali,Masculino,188,190.5,False
+2026,Ucayali,Femenino,45,58.6,False
+2027,Amazonas,Masculino,129,134.0,False
+2027,Amazonas,Femenino,29,40.5,False
+2027,Ancash,Masculino,167,161.0,False
+2027,Ancash,Femenino,42,50.2,False
+2027,Apurimac,Masculino,71,66.3,False
+2027,Apurimac,Femenino,18,20.4,False
+2027,Arequipa,Masculino,321,315.0,False
+2027,Arequipa,Femenino,81,96.8,False
+2027,Ayacucho,Masculino,77,79.2,False
+2027,Ayacucho,Femenino,19,24.6,False
+2027,Cajamarca,Masculino,95,95.0,False
+2027,Cajamarca,Femenino,26,29.1,False
+2027,Callao,Masculino,499,478.5,False
+2027,Callao,Femenino,125,145.4,False
+2027,Cusco,Masculino,128,126.0,False
+2027,Cusco,Femenino,32,38.9,False
+2027,Huancavelica,Masculino,54,51.2,False
+2027,Huancavelica,Femenino,13,15.5,False
+2027,Huanuco,Masculino,105,109.0,False
+2027,Huanuco,Femenino,26,33.5,False
+2027,Ica,Masculino,272,282.0,False
+2027,Ica,Femenino,67,86.5,False
+2027,Junin,Masculino,186,189.5,False
+2027,Junin,Femenino,47,58.8,False
+2027,La Libertad,Masculino,352,343.0,False
+2027,La Libertad,Femenino,80,105.1,False
+2027,Lambayeque,Masculino,217,220.5,False
+2027,Lambayeque,Femenino,60,68.4,False
+2027,Lima,Masculino,288,2341.4,False
+2027,Lima,Femenino,159,840.6,False
+2027,Loreto,Masculino,546,554.0,False
+2027,Loreto,Femenino,130,169.7,False
+2027,Madre de Dios,Masculino,96,96.0,False
+2027,Madre de Dios,Femenino,24,29.2,False
+2027,Moquegua,Masculino,69,65.5,False
+2027,Moquegua,Femenino,16,20.0,False
+2027,Pasco,Masculino,52,51.3,False
+2027,Pasco,Femenino,13,15.7,False
+2027,Piura,Masculino,168,162.5,False
+2027,Piura,Femenino,40,49.9,False
+2027,Puno,Masculino,92,95.0,False
+2027,Puno,Femenino,25,28.9,False
+2027,San Martin,Masculino,127,125.5,False
+2027,San Martin,Femenino,31,38.7,False
+2027,Tacna,Masculino,88,80.0,False
+2027,Tacna,Femenino,19,24.3,False
+2027,Tumbes,Masculino,65,64.8,False
+2027,Tumbes,Femenino,17,20.0,False
+2027,Ucayali,Masculino,188,190.5,False
+2027,Ucayali,Femenino,45,58.6,False
+2028,Amazonas,Masculino,129,134.0,False
+2028,Amazonas,Femenino,29,40.5,False
+2028,Ancash,Masculino,167,161.0,False
+2028,Ancash,Femenino,42,50.2,False
+2028,Apurimac,Masculino,71,66.3,False
+2028,Apurimac,Femenino,18,20.4,False
+2028,Arequipa,Masculino,321,315.0,False
+2028,Arequipa,Femenino,81,96.8,False
+2028,Ayacucho,Masculino,77,79.2,False
+2028,Ayacucho,Femenino,19,24.6,False
+2028,Cajamarca,Masculino,95,95.0,False
+2028,Cajamarca,Femenino,26,29.1,False
+2028,Callao,Masculino,499,478.5,False
+2028,Callao,Femenino,125,145.4,False
+2028,Cusco,Masculino,128,126.0,False
+2028,Cusco,Femenino,32,38.9,False
+2028,Huancavelica,Masculino,54,51.2,False
+2028,Huancavelica,Femenino,13,15.5,False
+2028,Huanuco,Masculino,105,109.0,False
+2028,Huanuco,Femenino,26,33.5,False
+2028,Ica,Masculino,272,282.0,False
+2028,Ica,Femenino,67,86.5,False
+2028,Junin,Masculino,186,189.5,False
+2028,Junin,Femenino,47,58.8,False
+2028,La Libertad,Masculino,352,343.0,False
+2028,La Libertad,Femenino,80,105.1,False
+2028,Lambayeque,Masculino,217,220.5,False
+2028,Lambayeque,Femenino,60,68.4,False
+2028,Lima,Masculino,288,2341.4,False
+2028,Lima,Femenino,159,840.6,False
+2028,Loreto,Masculino,546,554.0,False
+2028,Loreto,Femenino,130,169.7,False
+2028,Madre de Dios,Masculino,96,96.0,False
+2028,Madre de Dios,Femenino,24,29.2,False
+2028,Moquegua,Masculino,69,65.5,False
+2028,Moquegua,Femenino,16,20.0,False
+2028,Pasco,Masculino,52,51.3,False
+2028,Pasco,Femenino,13,15.7,False
+2028,Piura,Masculino,168,162.5,False
+2028,Piura,Femenino,40,49.9,False
+2028,Puno,Masculino,92,95.0,False
+2028,Puno,Femenino,25,28.9,False
+2028,San Martin,Masculino,127,125.5,False
+2028,San Martin,Femenino,31,38.7,False
+2028,Tacna,Masculino,88,80.0,False
+2028,Tacna,Femenino,19,24.3,False
+2028,Tumbes,Masculino,65,64.8,False
+2028,Tumbes,Femenino,17,20.0,False
+2028,Ucayali,Masculino,188,190.5,False
+2028,Ucayali,Femenino,45,58.6,False
+2029,Amazonas,Masculino,129,134.0,False
+2029,Amazonas,Femenino,29,40.5,False
+2029,Ancash,Masculino,167,161.0,False
+2029,Ancash,Femenino,42,50.2,False
+2029,Apurimac,Masculino,71,66.3,False
+2029,Apurimac,Femenino,18,20.4,False
+2029,Arequipa,Masculino,321,315.0,False
+2029,Arequipa,Femenino,81,96.8,False
+2029,Ayacucho,Masculino,77,79.2,False
+2029,Ayacucho,Femenino,19,24.6,False
+2029,Cajamarca,Masculino,95,95.0,False
+2029,Cajamarca,Femenino,26,29.1,False
+2029,Callao,Masculino,499,478.5,False
+2029,Callao,Femenino,125,145.4,False
+2029,Cusco,Masculino,128,126.0,False
+2029,Cusco,Femenino,32,38.9,False
+2029,Huancavelica,Masculino,54,51.2,False
+2029,Huancavelica,Femenino,13,15.5,False
+2029,Huanuco,Masculino,105,109.0,False
+2029,Huanuco,Femenino,26,33.5,False
+2029,Ica,Masculino,272,282.0,False
+2029,Ica,Femenino,67,86.5,False
+2029,Junin,Masculino,186,189.5,False
+2029,Junin,Femenino,47,58.8,False
+2029,La Libertad,Masculino,352,343.0,False
+2029,La Libertad,Femenino,80,105.1,False
+2029,Lambayeque,Masculino,217,220.5,False
+2029,Lambayeque,Femenino,60,68.4,False
+2029,Lima,Masculino,288,2341.4,False
+2029,Lima,Femenino,159,840.6,False
+2029,Loreto,Masculino,546,554.0,False
+2029,Loreto,Femenino,130,169.7,False
+2029,Madre de Dios,Masculino,96,96.0,False
+2029,Madre de Dios,Femenino,24,29.2,False
+2029,Moquegua,Masculino,69,65.5,False
+2029,Moquegua,Femenino,16,20.0,False
+2029,Pasco,Masculino,52,51.3,False
+2029,Pasco,Femenino,13,15.7,False
+2029,Piura,Masculino,168,162.5,False
+2029,Piura,Femenino,40,49.9,False
+2029,Puno,Masculino,92,95.0,False
+2029,Puno,Femenino,25,28.9,False
+2029,San Martin,Masculino,127,125.5,False
+2029,San Martin,Femenino,31,38.7,False
+2029,Tacna,Masculino,88,80.0,False
+2029,Tacna,Femenino,19,24.3,False
+2029,Tumbes,Masculino,65,64.8,False
+2029,Tumbes,Femenino,17,20.0,False
+2029,Ucayali,Masculino,188,190.5,False
+2029,Ucayali,Femenino,45,58.6,False
+2030,Amazonas,Masculino,129,134.0,False
+2030,Amazonas,Femenino,29,40.5,False
+2030,Ancash,Masculino,167,161.0,False
+2030,Ancash,Femenino,42,50.2,False
+2030,Apurimac,Masculino,71,66.3,False
+2030,Apurimac,Femenino,18,20.4,False
+2030,Arequipa,Masculino,321,315.0,False
+2030,Arequipa,Femenino,81,96.8,False
+2030,Ayacucho,Masculino,77,79.2,False
+2030,Ayacucho,Femenino,19,24.6,False
+2030,Cajamarca,Masculino,95,95.0,False
+2030,Cajamarca,Femenino,26,29.1,False
+2030,Callao,Masculino,499,478.5,False
+2030,Callao,Femenino,125,145.4,False
+2030,Cusco,Masculino,128,126.0,False
+2030,Cusco,Femenino,32,38.9,False
+2030,Huancavelica,Masculino,54,51.2,False
+2030,Huancavelica,Femenino,13,15.5,False
+2030,Huanuco,Masculino,105,109.0,False
+2030,Huanuco,Femenino,26,33.5,False
+2030,Ica,Masculino,272,282.0,False
+2030,Ica,Femenino,67,86.5,False
+2030,Junin,Masculino,186,189.5,False
+2030,Junin,Femenino,47,58.8,False
+2030,La Libertad,Masculino,352,343.0,False
+2030,La Libertad,Femenino,80,105.1,False
+2030,Lambayeque,Masculino,217,220.5,False
+2030,Lambayeque,Femenino,60,68.4,False
+2030,Lima,Masculino,288,2341.4,False
+2030,Lima,Femenino,159,840.6,False
+2030,Loreto,Masculino,546,554.0,False
+2030,Loreto,Femenino,130,169.7,False
+2030,Madre de Dios,Masculino,96,96.0,False
+2030,Madre de Dios,Femenino,24,29.2,False
+2030,Moquegua,Masculino,69,65.5,False
+2030,Moquegua,Femenino,16,20.0,False
+2030,Pasco,Masculino,52,51.3,False
+2030,Pasco,Femenino,13,15.7,False
+2030,Piura,Masculino,168,162.5,False
+2030,Piura,Femenino,40,49.9,False
+2030,Puno,Masculino,92,95.0,False
+2030,Puno,Femenino,25,28.9,False
+2030,San Martin,Masculino,127,125.5,False
+2030,San Martin,Femenino,31,38.7,False
+2030,Tacna,Masculino,88,80.0,False
+2030,Tacna,Femenino,19,24.3,False
+2030,Tumbes,Masculino,65,64.8,False
+2030,Tumbes,Femenino,17,20.0,False
+2030,Ucayali,Masculino,188,190.5,False
+2030,Ucayali,Femenino,45,58.6,False
