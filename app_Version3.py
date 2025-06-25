@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-# Cargar datos sin caché para forzar actualización
+# Cargar datos
+@st.cache_data
 def load_data():
     df_pred = pd.read_csv('predicciones_alerta_vih_2025_2030.csv')
     df_hist = pd.read_csv('DATASET_VIH.csv')
@@ -60,48 +61,49 @@ tipo_grafico = st.sidebar.radio(
     index=0
 )
 
-# --- Función para obtener datos EXACTOS del año seleccionado ---
-def get_exact_data(year, departamento, sexo):
-    """Obtiene los valores PRECISOS para el año, departamento y sexo seleccionados"""
-    mask = (
+# --- Función para obtener datos exactos ---
+def get_exact_values(year, departamento, sexo):
+    """Obtiene los valores exactos para la combinación seleccionada"""
+    # Filtrar datos de predicción
+    pred_filtrado = df_pred[
         (df_pred['Anio'] == year) &
         (df_pred['Departamento'] == departamento) &
         (df_pred['Sexo'] == sexo)
-    )
-    exact_data = df_pred[mask]
+    ]
     
-    if not exact_data.empty:
+    if not pred_filtrado.empty:
         return {
-            'casos_pred': int(exact_data['CasosEstimados_Predichos'].iloc[0]),
-            'prom_hist': float(exact_data['PromHist'].iloc[0]),
-            'alerta': exact_data['Alerta'].iloc[0]
+            'casos_pred': int(pred_filtrado['CasosEstimados_Predichos'].iloc[0]),
+            'prom_hist': float(pred_filtrado['PromHist'].iloc[0]),
+            'alerta': bool(pred_filtrado['Alerta'].iloc[0])
         }
     return None
 
-# Obtener datos exactos para la selección actual
-current_data = get_exact_data(year, departamento, sexo)
+# Obtener valores actuales
+current_values = get_exact_values(year, departamento, sexo)
 
 # --- Mostrar resultados ---
-if current_data:
+if current_values:
     st.subheader(f"Resultados para {departamento} - {sexo} - {year}")
-    st.markdown(f"**Casos estimados predichos:** `{current_data['casos_pred']}`  \n**Promedio histórico:** `{current_data['prom_hist']:.1f}`")
+    
+    # Mostrar valores principales
+    col1, col2 = st.columns(2)
+    with col1:
+        st.metric("Casos estimados predichos", current_values['casos_pred'])
+    with col2:
+        st.metric("Promedio histórico", f"{current_values['prom_hist']:.1f}")
 
     # Mostrar alerta
-    if current_data['alerta']:
+    if current_values['alerta']:
         st.error("⚠️ ¡Alerta! El valor predicho está fuera del rango histórico.", icon="🚨")
     else:
         st.success("✅ Sin alerta. El valor predicho está dentro del rango histórico.", icon="✅")
-
-    # Métricas
-    col1, col2 = st.columns(2)
-    col1.metric("Casos predichos", current_data['casos_pred'])
-    col2.metric("Promedio histórico", f"{current_data['prom_hist']:.1f}")
 
     # --- Gráficos ---
     st.markdown("---")
     st.subheader(f"Visualización: {tipo_grafico}")
 
-    # Preparar datos combinados (históricos + predicciones)
+    # Preparar datos para gráficos
     df_hist_filtrado = df_hist[
         (df_hist['Departamento'] == departamento) &
         (df_hist['Sexo'] == sexo)
@@ -116,15 +118,15 @@ if current_data:
     df_completo = df_completo[df_completo['Anio'] <= year]  # Filtrar hasta el año seleccionado
     df_completo['Tipo'] = df_completo['Anio'].apply(lambda x: 'Histórico' if x <= 2024 else 'Predicción')
 
-    # Gráfico de Barras (comparación específica para el año seleccionado)
+    # Gráfico de Barras
     if tipo_grafico == "Barras":
-        datos_barras = pd.DataFrame({
-            'Tipo': ['Promedio histórico', 'Predicción actual'],
-            'Casos': [current_data['prom_hist'], current_data['casos_pred']]
+        chart_data = pd.DataFrame({
+            'Tipo': ['Promedio histórico', 'Predicción'],
+            'Valor': [current_values['prom_hist'], current_values['casos_pred']]
         })
-        chart = alt.Chart(datos_barras).mark_bar().encode(
+        chart = alt.Chart(chart_data).mark_bar().encode(
             x='Tipo',
-            y='Casos',
+            y='Valor',
             color=alt.Color('Tipo', scale=alt.Scale(range=["#1f77b4", "#ff7f0e"]))
         ).properties(
             title=f"Comparación para {year}",
@@ -132,7 +134,7 @@ if current_data:
             height=400
         )
 
-    # Gráfico de Líneas (evolución completa hasta el año seleccionado)
+    # Gráfico de Líneas
     elif tipo_grafico == "Líneas":
         chart = alt.Chart(df_completo).mark_line(point=True).encode(
             x=alt.X('Anio:O', title='Año'),
