@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-# Cargar datos sin caché para forzar actualización
+# Cargar datos
+@st.cache_data
 def load_data():
     df_pred = pd.read_csv('predicciones_alerta_vih_2025_2030.csv')
     df_hist = pd.read_csv('DATASET_VIH.csv')
@@ -60,7 +61,7 @@ tipo_grafico = st.sidebar.radio(
     index=0
 )
 
-# --- Filtrar datos en tiempo real ---
+# --- Filtrar datos ---
 def get_filtered_data(year, departamento, sexo):
     # Filtrar datos históricos
     hist_filtrado = df_hist[
@@ -71,8 +72,7 @@ def get_filtered_data(year, departamento, sexo):
     # Filtrar datos de predicción
     pred_filtrado = df_pred[
         (df_pred['Departamento'] == departamento) &
-        (df_pred['Sexo'] == sexo) &
-        (df_pred['Anio'] <= year)  # Solo años hasta el seleccionado
+        (df_pred['Sexo'] == sexo)
     ]
     
     return hist_filtrado, pred_filtrado
@@ -127,24 +127,41 @@ if not pred_filtrado.empty:
                 x='Tipo',
                 y='Casos',
                 color=alt.Color('Tipo', scale=alt.Scale(range=["#1f77b4", "#ff7f0e"]))
-            ).properties(title=f"Comparación para {year}")
+            ).properties(
+                title=f"Comparación para {year}",
+                width=600,
+                height=400
+            )
 
         # Gráfico de Líneas o Área
         else:
-            if tipo_grafico == "Líneas":
-                mark = alt.Chart().mark_line(point=True)
-            else:
-                mark = alt.Chart().mark_area(opacity=0.7)
+            # Crear columna para distinguir histórico de predicción
+            df_completo['Tipo'] = df_completo['Anio'].apply(lambda x: 'Histórico' if x <= 2024 else 'Predicción')
             
-            chart = alt.Chart(df_completo).transform_calculate(
-                Tipo="datum.Anio <= 2024 ? 'Histórico' : 'Predicción'"
-            ).encode(
-                x=alt.X('Anio:O', title='Año'),
-                y=alt.Y('Casos:Q', title='Casos'),
-                color=alt.Color('Tipo:N', scale=alt.Scale(domain=['Histórico', 'Predicción'], range=['#1f77b4', '#d62728'])),
-                tooltip=['Anio', 'Casos', 'Tipo']
-            ).properties(title="Evolución de casos hasta el año seleccionado")
-            chart = mark + chart  # Aplicar el tipo de marca seleccionado
+            if tipo_grafico == "Líneas":
+                chart = alt.Chart(df_completo).mark_line(point=True).encode(
+                    x=alt.X('Anio:O', title='Año'),
+                    y=alt.Y('Casos:Q', title='Casos'),
+                    color=alt.Color('Tipo:N', scale=alt.Scale(domain=['Histórico', 'Predicción'], 
+                                  range=['#1f77b4', '#d62728'])),
+                    tooltip=['Anio', 'Casos', 'Tipo']
+                ).properties(
+                    title="Evolución de casos hasta el año seleccionado",
+                    width=600,
+                    height=400
+                )
+            else:  # Área
+                chart = alt.Chart(df_completo).mark_area(opacity=0.7).encode(
+                    x=alt.X('Anio:O', title='Año'),
+                    y=alt.Y('Casos:Q', title='Casos'),
+                    color=alt.Color('Tipo:N', scale=alt.Scale(domain=['Histórico', 'Predicción'], 
+                                  range=['#1f77b4', '#d62728'])),
+                    tooltip=['Anio', 'Casos', 'Tipo']
+                ).properties(
+                    title="Tendencia de casos hasta el año seleccionado",
+                    width=600,
+                    height=400
+                )
 
         st.altair_chart(chart, use_container_width=True)
 
