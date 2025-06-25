@@ -1,27 +1,6 @@
 Anio,Departamento,Sexo,CasosEstimados_Predichos,PromHist,Alerta
 2025,Amazonas,Masculino,138,161.2,False
 2025,Amazonas,Femenino,125,91.9,True
-2025,Ancash,Masculino,136,148.3,False
-2025,Ancash,Femenino,108,89.4,True
-2025,Apurimac,Masculino,101,107.8,False
-2025,Apurimac,Femenino,128,164.4,False
-2025,Arequipa,Masculino,135,136.2,False
-2025,Arequipa,Femenino,109,87.5,True
-2025,Ayacucho,Masculino,113,95.4,False
-2025,Ayacucho,Femenino,112,80.7,True
-2025,Cajamarca,Masculino,155,178.7,False
-2025,Cajamarca,Femenino,101,81.9,True
-2025,Callao,Masculino,110,114.6,False
-2025,Callao,Femenino,121,112.9,False
-2025,Cusco,Masculino,118,150.9,False
-2025,Cusco,Femenino,131,154.8,False
-2025,Huancavelica,Masculino,131,92.8,True
-2025,Huancavelica,Femenino,124,144.2,False
-2025,Huanuco,Masculino,122,152.4,False
-2025,Huanuco,Femenino,144,106.3,True
-2025,Ica,Masculino,128,135.0,False
-2025,Ica,Femenino,127,98.0,True
-2025,Junin,Masculino,131,110.2,False
 2025,Junin,Femenino,106,101.4,False
 2025,La Libertad,Masculino,123,96.4,True
 2025,La Libertad,Femenino,131,109.7,False
