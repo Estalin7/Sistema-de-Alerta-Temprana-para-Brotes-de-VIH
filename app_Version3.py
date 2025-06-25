@@ -2,49 +2,47 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import numpy as np
-import requests
-from io import StringIO
 
-# Cargar datos desde URL
+# Cargar datos
 @st.cache_data
 def load_data():
     try:
-        # URL del dataset simulado mejorado
+        # Usar el nuevo dataset simulado
         url = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/predicciones_alerta_vih_2025_2030_simulado-sJhB4luINPdUPcTCLKSgmVsfrVb0ui.csv"
         
-        st.info("🔄 Cargando datos desde URL...")
+        # Intentar cargar desde URL primero
+        try:
+            import requests
+            from io import StringIO
+            response = requests.get(url)
+            response.raise_for_status()
+            df_pred = pd.read_csv(StringIO(response.text))
+            
+            # Corregir tipos de datos
+            df_pred['Anio'] = pd.to_numeric(df_pred['Anio'], errors='coerce')
+            df_pred['CasosEstimados_Predichos'] = pd.to_numeric(df_pred['CasosEstimados_Predichos'], errors='coerce')
+            df_pred['PromHist'] = pd.to_numeric(df_pred['PromHist'], errors='coerce')
+            df_pred['Alerta'] = df_pred['Alerta'].map({'True': True, 'False': False, True: True, False: False})
+            
+            st.success("✅ Datos cargados desde el dataset simulado mejorado")
+            
+        except:
+            # Fallback a archivo local si existe
+            df_pred = pd.read_csv('predicciones_alerta_vih_2025_2030_simulado_corregido.csv')
         
-        # Cargar desde URL
-        response = requests.get(url)
-        response.raise_for_status()
-        df_pred = pd.read_csv(StringIO(response.text))
-        
-        # Corregir tipos de datos
-        df_pred['Anio'] = pd.to_numeric(df_pred['Anio'], errors='coerce')
-        df_pred['CasosEstimados_Predichos'] = pd.to_numeric(df_pred['CasosEstimados_Predichos'], errors='coerce')
-        df_pred['PromHist'] = pd.to_numeric(df_pred['PromHist'], errors='coerce')
-        df_pred['Alerta'] = df_pred['Alerta'].map({'True': True, 'False': False, True: True, False: False})
-        
-        # Limpiar datos nulos
-        df_pred = df_pred.dropna()
-        
-        st.success("✅ Datos cargados exitosamente desde el dataset simulado")
-        
-        # Datos históricos vacíos (opcional)
-        df_hist = pd.DataFrame()
+        # Intentar cargar datos históricos
+        try:
+            df_hist = pd.read_csv('DATASET_VIH.csv')
+        except:
+            df_hist = pd.DataFrame()  # Datos históricos vacíos si no existen
         
         return df_pred, df_hist
         
     except Exception as e:
-        st.error(f"❌ Error cargando datos desde URL: {e}")
-        
-        # Generar datos de ejemplo como fallback
-        st.warning("⚠️ Generando datos de ejemplo...")
-        df_pred = generar_datos_ejemplo()
-        df_hist = pd.DataFrame()
-        return df_pred, df_hist
+        st.error(f"Error cargando datos: {e}")
+        return pd.DataFrame(), pd.DataFrame()
 
-# Función para generar datos de ejemplo
+# Función para generar datos de ejemplo si no existen los archivos
 @st.cache_data
 def generar_datos_ejemplo():
     """Genera datos de ejemplo con variaciones por año"""
@@ -57,7 +55,7 @@ def generar_datos_ejemplo():
     sexos = ['Masculino', 'Femenino']
     años_pred = [2025, 2026, 2027, 2028, 2029, 2030]
     
-    # Valores base por departamento
+    # Valores base por departamento (aproximados)
     valores_base = {
         'Lima': {'Masculino': 3500, 'Femenino': 900},
         'Callao': {'Masculino': 480, 'Femenino': 120},
@@ -126,8 +124,19 @@ def generar_datos_ejemplo():
     
     return pd.DataFrame(predicciones)
 
-# Cargar datos
-df_pred, df_hist = load_data()
+# Intentar cargar datos, si no existen generar ejemplos
+try:
+    df_pred, df_hist = load_data()
+    if df_pred.empty:
+        st.warning("⚠️ Generando datos de ejemplo con variaciones por año...")
+        df_pred = generar_datos_ejemplo()
+        # Guardar para uso futuro
+        df_pred.to_csv('predicciones_alerta_vih_2025_2030.csv', index=False)
+        st.success("✅ Datos de ejemplo generados con variaciones por año")
+except:
+    st.warning("⚠️ Generando datos de ejemplo...")
+    df_pred = generar_datos_ejemplo()
+    df_hist = pd.DataFrame()  # Datos históricos vacíos para el ejemplo
 
 # Verificar que los datos se cargaron correctamente
 if df_pred.empty:
@@ -355,6 +364,9 @@ if not current_pred.empty:
         # Preparar datos para el gráfico de barras
         chart_data = all_years_data.copy()
         chart_data['Destacado'] = chart_data['Anio'] == year
+        chart_data['Color'] = chart_data.apply(
+            lambda x: f"Año {x['Anio']} ⭐" if x['Destacado'] else f"Año {x['Anio']}", axis=1
+        )
         
         chart = alt.Chart(chart_data).mark_bar(size=60).encode(
             x=alt.X('Anio:O', title='Año'),
@@ -477,32 +489,12 @@ Cada predicción incluye variaciones aleatorias controladas para simular la ince
 **✅ Ahora cuando cambies el año verás números diferentes.**
 """)
 
-# Información del sistema
-st.markdown("---")
-st.subheader("ℹ️ Información del Sistema")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.markdown("**📊 Datos cargados:**")
-    st.write(f"- Registros de predicción: {len(df_pred):,}")
-    st.write(f"- Departamentos: {len(available_departments)}")
-    st.write(f"- Años: {min(available_years)} - {max(available_years)}")
-    st.write(f"- Total de alertas: {df_pred['Alerta'].sum():,}")
-
-with col2:
-    st.markdown("**🎯 Filtros actuales:**")
-    st.write(f"- Año seleccionado: **{year}**")
-    st.write(f"- Departamento: {departamento}")
-    st.write(f"- Sexo: {sexo}")
-    st.write(f"- Tipo de gráfico: {tipo_grafico}")
-
 # Pie de página
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 2rem;'>
     <h4>🦠 Sistema de Alerta Temprana VIH - Perú</h4>
-    <p>Versión 3.3 - Con carga desde URL<br>
+    <p>Versión 3.2 - Con predicciones variables por año<br>
     Inspirado en la <a href='https://app7.dge.gob.pe/maps/sala_vih/' target='_blank'>Sala Situacional VIH del MINSA Perú</a></p>
 </div>
-""", unsafe_allow_html=True)
+""")
