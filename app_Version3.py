@@ -1,100 +1,118 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-import os
 
-# ========== CONFIGURACIÓN DE PÁGINA ==========
+# Cargar datos
+df_pred = pd.read_csv('predicciones_alerta_vih_2025_2030.csv')
+df_hist = pd.read_csv('DATASET_VIH.csv')
+
 st.set_page_config(
     page_title="Predicción y Alerta de VIH en Perú",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-st.title("📊 Sistema de Alerta Temprana para Brotes de VIH en Perú")
 st.markdown(
     """
-    Consulta los **casos estimados y predichos de VIH** por Año, Departamento y Sexo.
-    Visualiza la **tendencia histórica** y la **proyección futura** hasta 2030, junto con las alertas tempranas respecto al promedio histórico (2015–2024).
-    """
+    # 🦠 Predicción y Alerta de Casos de VIH en Perú
+    Consulta los *casos estimados y predichos de VIH* por Departamento, Sexo y Año.
+    También puedes ver si hay una *alerta* respecto al promedio histórico.
+    """,
+    unsafe_allow_html=True
 )
 
-# ========== CARGA DE DATOS ==========
-# Se asume que los archivos están en la carpeta raíz o ajustar la ruta si es necesario
-HIST_FILE = "DATASET_VIH.csv"
-PRED_FILE = "predicciones_alerta_vih_2025_2030_final.csv"
+# Barra lateral de filtros
+st.sidebar.header("Filtros de Consulta")
+year = st.sidebar.selectbox("Año", sorted(df_pred['Anio'].unique()))
+departamento = st.sidebar.selectbox("Departamento", sorted(df_pred['Departamento'].unique()))
+sexo = st.sidebar.selectbox("Sexo", sorted(df_pred['Sexo'].unique()))
 
-if not (os.path.exists(HIST_FILE) and os.path.exists(PRED_FILE)):
-    st.error("No se encuentran los archivos de datos requeridos. Verifica que DATASET_VIH.csv y predicciones_alerta_vih_2025_2030_final.csv estén en el mismo directorio que este script.")
-    st.stop()
+# Filtrar predicción seleccionada
+filtro = (
+    (df_pred['Anio'] == year) &
+    (df_pred['Departamento'] == departamento) &
+    (df_pred['Sexo'] == sexo)
+)
+fila = df_pred[filtro]
 
-df_hist = pd.read_csv(HIST_FILE)
-df_pred = pd.read_csv(PRED_FILE)
+# Mostrar resultados
+if not fila.empty:
+    casos_pred = int(fila['CasosEstimados_Predichos'].iloc[0])
+    prom_hist = float(fila['PromHist'].iloc[0])
+    alerta = fila['Alerta'].iloc[0]
 
-# ========== SIDEBAR DE FILTROS ==========
-st.sidebar.header("Filtros")
-departamentos = sorted(df_pred["Departamento"].unique())
-sexo = sorted(df_pred["Sexo"].unique())
+    st.subheader(f"Resultados para {departamento} - {sexo} - {year}")
+    st.markdown(f"*Casos estimados predichos:* {casos_pred}  \n*Promedio histórico:* {prom_hist:.1f}")
 
-departamento = st.sidebar.selectbox("Departamento", departamentos)
-sexo_sel = st.sidebar.selectbox("Sexo", sexo)
+    if alerta:
+        st.error("⚠️ ¡Alerta! El valor predicho está fuera del rango histórico.", icon="🚨")
+    else:
+        st.success("Sin alerta. El valor predicho está dentro del rango histórico.", icon="✅")
 
-# ========== FILTRADO DE DATOS ==========
-hist_filtrado = df_hist[(df_hist["Departamento"] == departamento) & (df_hist["Sexo"] == sexo_sel)]
-pred_filtrado = df_pred[(df_pred["Departamento"] == departamento) & (df_pred["Sexo"] == sexo_sel)]
+    # Resumen visual (tarjetas tipo dashboard)
+    col1, col2 = st.columns(2)
+    col1.metric("Casos predichos", casos_pred)
+    col2.metric("Promedio histórico", f"{prom_hist:.1f}")
 
-# ========== UNIÓN DE HISTÓRICO Y PREDICCIÓN ==========
-hist_plot = hist_filtrado[["Anio", "CasosEstimados"]].copy()
-hist_plot["Tipo"] = "Histórico"
-hist_plot = hist_plot.rename(columns={"CasosEstimados": "Casos"})
+    # Gráfico de barras: Comparación actual vs histórico
+    barras = pd.DataFrame({
+        "Categoría": ["Prom. histórico", "Predicción"],
+        "Casos": [prom_hist, casos_pred]
+    })
+    bar_chart = alt.Chart(barras).mark_bar().encode(
+        x=alt.X('Categoría', sort=None),
+        y='Casos',
+        color=alt.Color('Categoría', scale=alt.Scale(range=["#264653", "#f4a261"]))
+    ).properties(title="Comparación: Promedio histórico vs Predicción")
+    st.altair_chart(bar_chart, use_container_width=True)
 
-pred_plot = pred_filtrado[["Anio", "CasosEstimados_Predichos"]].copy()
-pred_plot["Tipo"] = "Predicción"
-pred_plot = pred_plot.rename(columns={"CasosEstimados_Predichos": "Casos"})
-# Evitar negativos en la predicción
-pred_plot["Casos"] = pred_plot["Casos"].clip(lower=0)
+    st.markdown("---")
+    if st.checkbox("Mostrar evolución histórica y predicha para esta combinación"):
+        # Combinar datos históricos y predicciones para la evolución completa
+        df_hist_filtro = df_hist[
+            (df_hist['Departamento'] == departamento) &
+            (df_hist['Sexo'] == sexo)
+        ][['Anio', 'CasosEstimados', 'Tendencia']].copy()
 
-df_plot = pd.concat([hist_plot, pred_plot], axis=0).sort_values("Anio")
+        df_pred_futuro = df_pred[
+            (df_pred['Departamento'] == departamento) &
+            (df_pred['Sexo'] == sexo)
+        ][['Anio', 'CasosEstimados_Predichos']].copy()
+        df_pred_futuro['Tendencia'] = "Predicción"
+        df_pred_futuro = df_pred_futuro.rename(columns={'CasosEstimados_Predichos': 'CasosEstimados'})
 
-# ========== GRÁFICO DE EVOLUCIÓN ==========
-st.subheader(f"📈 Evolución de VIH en {departamento} ({sexo_sel})")
+        df_evolucion = pd.concat([df_hist_filtro, df_pred_futuro], ignore_index=True)
+        df_evolucion = df_evolucion.sort_values('Anio')
 
-chart = alt.Chart(df_plot).mark_line(point=True).encode(
-    x=alt.X("Anio:O", title="Año"),
-    y=alt.Y("Casos:Q", title="Casos Estimados"),
-    color=alt.Color("Tipo", scale=alt.Scale(domain=["Histórico", "Predicción"], range=["#1f77b4", "#ff7f0e"])),
-    tooltip=["Anio", "Casos", "Tipo"]
-).properties(width=800, height=400)
+        # Graficar la evolución total (histórica + predicción)
+        line_chart = alt.Chart(df_evolucion).mark_line(point=True).encode(
+            x='Anio:O',
+            y='CasosEstimados:Q',
+            color=alt.condition(
+                alt.datum.Tendencia == "Predicción",
+                alt.value("#d62728"),  # color para predicciones
+                alt.value("#1f77b4")   # color para histórico
+            ),
+            tooltip=['Anio', 'CasosEstimados', 'Tendencia']
+        ).properties(title="Evolución histórica y predicha de casos")
+        st.altair_chart(line_chart, use_container_width=True)
 
-st.altair_chart(chart, use_container_width=True)
-
-# ========== TABLA COMPARATIVA Y ALERTA ==========
-st.subheader("🔍 Resultados Detallados")
-
-anio = st.sidebar.selectbox("Año (proyección)", sorted(df_pred["Anio"].unique()))
-
-row = pred_filtrado[pred_filtrado["Anio"] == anio]
-if row.empty:
-    st.warning(f"No hay datos de predicción para {departamento}, {sexo_sel}, año {anio}.")
+        # Mostrar la tabla completa
+        st.dataframe(df_evolucion.rename(columns={
+            'Anio': 'Año',
+            'CasosEstimados': 'Casos reportados/predichos',
+            'Tendencia': 'Tendencia'
+        }))
 else:
-    row = row.iloc[0]
-    alerta = "⚠️ Sí" if row["Alerta"] else "❌ No"
-    st.markdown(f"""
-    | Año | Departamento | Sexo | Predicción | Prom. Histórico | ¿Alerta? |
-    |---|---|---|---|---|---|
-    | {row['Anio']} | {row['Departamento']} | {row['Sexo']} | **{max(0, int(row['CasosEstimados_Predichos']))}** | {row['PromHist']:.2f} | {alerta} |
-    """)
+    st.warning("No hay datos para la combinación seleccionada.")
 
-    st.markdown("**Detalle completo:**")
-    st.dataframe(
-        pred_filtrado[["Anio", "CasosEstimados_Predichos", "PromHist", "Alerta"]]
-        .assign(Alerta=lambda d: d["Alerta"].replace({True: "⚠️", False: ""}))
-        .rename(columns={
-            "Anio": "Año",
-            "CasosEstimados_Predichos": "Predicción",
-            "PromHist": "Promedio Histórico",
-            "Alerta": "Alerta"
-        })
-        .reset_index(drop=True)
-    )
-
+# Pie de página
 st.markdown("---")
-st.caption("Desarrollado como demostración. Inspirado en la Sala VIH de DGE/MINSA · Powered by Streamlit")
+st.markdown(
+    """
+    <small>
+    Desarrollado con Streamlit para el Proyecto de Aprendizaje Estadístico sobre VIH.<br>
+    </small>
+    """,
+    unsafe_allow_html=True
+)
