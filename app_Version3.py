@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-# Cargar datos
-@st.cache_data
+# Cargar datos sin caché para forzar actualización
 def load_data():
     df_pred = pd.read_csv('predicciones_alerta_vih_2025_2030.csv')
     df_hist = pd.read_csv('DATASET_VIH.csv')
@@ -61,39 +60,42 @@ tipo_grafico = st.sidebar.radio(
     index=0
 )
 
-# --- Función para obtener datos específicos ---
-def get_year_data(df, year, departamento, sexo):
-    """Filtra los datos para un año, departamento y sexo específicos"""
+# --- Función para obtener datos EXACTOS del año seleccionado ---
+def get_exact_data(year, departamento, sexo):
+    """Obtiene los valores PRECISOS para el año, departamento y sexo seleccionados"""
     mask = (
-        (df['Anio'] == year) &
-        (df['Departamento'] == departamento) &
-        (df['Sexo'] == sexo)
+        (df_pred['Anio'] == year) &
+        (df_pred['Departamento'] == departamento) &
+        (df_pred['Sexo'] == sexo)
     )
-    return df[mask]
+    exact_data = df_pred[mask]
+    
+    if not exact_data.empty:
+        return {
+            'casos_pred': int(exact_data['CasosEstimados_Predichos'].iloc[0]),
+            'prom_hist': float(exact_data['PromHist'].iloc[0]),
+            'alerta': exact_data['Alerta'].iloc[0]
+        }
+    return None
 
-# Obtener datos para el año seleccionado
-current_pred = get_year_data(df_pred, year, departamento, sexo)
+# Obtener datos exactos para la selección actual
+current_data = get_exact_data(year, departamento, sexo)
 
 # --- Mostrar resultados ---
-if not current_pred.empty:
-    # Extraer valores específicos para el año seleccionado
-    casos_pred = int(current_pred['CasosEstimados_Predichos'].iloc[0])
-    prom_hist = float(current_pred['PromHist'].iloc[0])
-    alerta = current_pred['Alerta'].iloc[0]
-
+if current_data:
     st.subheader(f"Resultados para {departamento} - {sexo} - {year}")
-    st.markdown(f"**Casos estimados predichos:** `{casos_pred}`  \n**Promedio histórico:** `{prom_hist:.1f}`")
+    st.markdown(f"**Casos estimados predichos:** `{current_data['casos_pred']}`  \n**Promedio histórico:** `{current_data['prom_hist']:.1f}`")
 
     # Mostrar alerta
-    if alerta:
+    if current_data['alerta']:
         st.error("⚠️ ¡Alerta! El valor predicho está fuera del rango histórico.", icon="🚨")
     else:
         st.success("✅ Sin alerta. El valor predicho está dentro del rango histórico.", icon="✅")
 
     # Métricas
     col1, col2 = st.columns(2)
-    col1.metric("Casos predichos", casos_pred)
-    col2.metric("Promedio histórico", f"{prom_hist:.1f}")
+    col1.metric("Casos predichos", current_data['casos_pred'])
+    col2.metric("Promedio histórico", f"{current_data['prom_hist']:.1f}")
 
     # --- Gráficos ---
     st.markdown("---")
@@ -114,11 +116,11 @@ if not current_pred.empty:
     df_completo = df_completo[df_completo['Anio'] <= year]  # Filtrar hasta el año seleccionado
     df_completo['Tipo'] = df_completo['Anio'].apply(lambda x: 'Histórico' if x <= 2024 else 'Predicción')
 
-    # Gráfico de Barras
+    # Gráfico de Barras (comparación específica para el año seleccionado)
     if tipo_grafico == "Barras":
         datos_barras = pd.DataFrame({
             'Tipo': ['Promedio histórico', 'Predicción actual'],
-            'Casos': [prom_hist, casos_pred]
+            'Casos': [current_data['prom_hist'], current_data['casos_pred']]
         })
         chart = alt.Chart(datos_barras).mark_bar().encode(
             x='Tipo',
@@ -130,7 +132,7 @@ if not current_pred.empty:
             height=400
         )
 
-    # Gráfico de Líneas
+    # Gráfico de Líneas (evolución completa hasta el año seleccionado)
     elif tipo_grafico == "Líneas":
         chart = alt.Chart(df_completo).mark_line(point=True).encode(
             x=alt.X('Anio:O', title='Año'),
