@@ -112,7 +112,6 @@ st.markdown(
     """
     <small>
     Desarrollado con Streamlit para el Proyecto de Aprendizaje Estadístico sobre VIH.<br>
-    Inspirado en la Sala Situacional VIH del MINSA Perú.
     </small>
     """,
     unsafe_allow_html=True
